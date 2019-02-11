@@ -1,0 +1,30 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    
+    repositories {
+        google()
+        jcenter()//构建脚本中所依赖的库都在jcenter仓库下载
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.1'
+        
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+// 但是Maven Central的最大问题是对开发者不够友好。上传library异常困难。上传上去的开发者都是某种程度的极客。
+// 同时还因为诸如安全方面的其他原因，Android Studio团队决定把默认的仓库替换成jcenter。
+// 正如你看到的，一旦使用最新版本的Android Studio创建一个项目，jcenter()自动被定义，而不是mavenCentral()。
+        google()
+        jcenter()  //当前项目所有模块所依赖的库都在jcenter仓库下载
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
