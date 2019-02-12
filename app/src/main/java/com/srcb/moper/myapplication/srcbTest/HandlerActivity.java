@@ -167,6 +167,7 @@ public class HandlerActivity extends AppCompatActivity implements View.OnClickLi
                 bindService(bindIntent,serviceConnection,BIND_AUTO_CREATE);
                 break;
             case R.id.button7:
+                //aag
                 unbindService(serviceConnection);
         }
     }
